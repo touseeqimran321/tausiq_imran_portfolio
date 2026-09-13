@@ -1,0 +1,1836 @@
+/* ==========================================================================
+   TAUSIQ IMRAN — THE DIGITAL UNIVERSE
+   Ultra-Premium Cinematic Futuristic 3D Experience Stylesheet
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800;900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
+
+:root {
+  /* Cinematic Obsidian & Deep Space Neutrals */
+  --void-black: #030306;
+  --void-deep: #06070B;
+  --void-surface: rgba(12, 14, 22, 0.72);
+  --void-card: rgba(16, 19, 32, 0.65);
+  --void-elevated: rgba(24, 28, 48, 0.75);
+
+  /* Luminescent Accents */
+  --hologram-cyan: #00F0FF;
+  --hologram-cyan-dim: rgba(0, 240, 255, 0.18);
+  --hologram-cyan-glow: rgba(0, 240, 255, 0.45);
+  --quantum-violet: #8B5CF6;
+  --quantum-violet-dim: rgba(139, 92, 246, 0.18);
+  --laser-indigo: #6366F1;
+  --titanium-silver: #E2E8F0;
+  --platinum-light: #F8FAFC;
+  --text-muted: #7A8499;
+  --text-dim: #4B5568;
+
+  /* Borders & Optical Hairlines */
+  --hairline-subtle: rgba(255, 255, 255, 0.07);
+  --hairline-bright: rgba(255, 255, 255, 0.16);
+  --hairline-cyan: rgba(0, 240, 255, 0.35);
+
+  /* Shadows & Volumetric Glows */
+  --glow-cyan-sm: 0 0 16px rgba(0, 240, 255, 0.25);
+  --glow-cyan-lg: 0 0 45px rgba(0, 240, 255, 0.35);
+  --glow-violet-lg: 0 0 50px rgba(139, 92, 246, 0.3);
+  --shadow-deep: 0 24px 64px -12px rgba(0, 0, 0, 0.85);
+
+  /* Spatial Dimensions */
+  --nav-height: 72px;
+  --container-max: 1320px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 9999px;
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--void-black);
+  color: var(--titanium-silver);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--void-black);
+  color: var(--titanium-silver);
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  cursor: default;
+}
+
+/* Selection Color */
+::selection {
+  background: var(--hologram-cyan);
+  color: #000;
+}
+
+/* ==========================================================================
+   Background WebGL Canvas & Atmospheric Overlays
+   ========================================================================== */
+#universe-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: auto;
+}
+
+.cinematic-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 50%, rgba(3, 3, 6, 0) 30%, rgba(3, 3, 6, 0.82) 85%, #030306 100%);
+}
+
+.subtle-digital-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ==========================================================================
+   Custom Futuristic Cursor
+   ========================================================================== */
+.cursor-reticle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(0, 240, 255, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s var(--ease-cinematic), height 0.25s var(--ease-cinematic), border-color 0.25s, background-color 0.25s;
+  mix-blend-mode: screen;
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  background: var(--hologram-cyan);
+  box-shadow: 0 0 8px var(--hologram-cyan);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-reticle.active {
+  width: 56px;
+  height: 56px;
+  border-color: var(--hologram-cyan);
+  background-color: rgba(0, 240, 255, 0.08);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
+}
+
+@media (pointer: coarse) {
+  .cursor-reticle, .cursor-dot {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   INITIALIZATION BOOT SEQUENCE OVERLAY
+   ========================================================================== */
+.boot-sequence-veil {
+  position: fixed;
+  inset: 0;
+  background-color: #020204;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  transition: opacity 1.2s cubic-bezier(0.83, 0, 0.17, 1), visibility 1.2s;
+}
+
+.boot-sequence-veil.terminated {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.boot-terminal-box {
+  width: 100%;
+  max-width: 520px;
+  font-family: 'JetBrains Mono', monospace;
+  text-align: left;
+}
+
+.boot-telemetry-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.18em;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--hairline-subtle);
+  padding-bottom: 8px;
+}
+
+.boot-status-line {
+  font-size: 0.9375rem;
+  color: var(--hologram-cyan);
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.boot-pulsing-node {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--hologram-cyan);
+  box-shadow: 0 0 12px var(--hologram-cyan);
+  animation: pulseDot 1.4s infinite ease-in-out;
+}
+
+.boot-progress-bar-wrap {
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.boot-progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--quantum-violet), var(--hologram-cyan));
+  box-shadow: 0 0 10px var(--hologram-cyan);
+  transition: width 0.15s ease-out;
+}
+
+.boot-log-lines {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  height: 72px;
+  overflow: hidden;
+}
+
+.boot-log-lines p {
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.boot-log-lines p.highlight {
+  color: var(--titanium-silver);
+}
+
+.boot-enter-btn {
+  margin-top: 24px;
+  display: none;
+  background: transparent;
+  border: 1px solid var(--hologram-cyan);
+  color: var(--hologram-cyan);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  padding: 12px 28px;
+  cursor: pointer;
+  border-radius: var(--radius-xs);
+  box-shadow: var(--glow-cyan-sm);
+  transition: all 0.3s var(--ease-cinematic);
+}
+
+.boot-enter-btn:hover {
+  background: var(--hologram-cyan);
+  color: #000;
+  box-shadow: var(--glow-cyan-lg);
+  transform: translateY(-2px);
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.6); opacity: 0.4; }
+}
+
+/* ==========================================================================
+   FUTURISTIC FLOATING OS NAVIGATION (HUD)
+   ========================================================================== */
+.futuristic-hud-nav {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: var(--container-max);
+  height: var(--nav-height);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  background: rgba(6, 7, 11, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--hairline-subtle);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.65);
+  transition: all 0.4s var(--ease-cinematic);
+}
+
+.futuristic-hud-nav.scrolled {
+  top: 14px;
+  background: rgba(4, 5, 8, 0.88);
+  border-color: rgba(0, 240, 255, 0.16);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.85), var(--glow-cyan-sm);
+}
+
+.hud-brand-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.hud-brand-symbol {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--hologram-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 0.9375rem;
+  color: var(--platinum-light);
+  background: radial-gradient(circle at 40% 40%, rgba(0, 240, 255, 0.2) 0%, transparent 80%);
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+.hud-brand-link:hover .hud-brand-symbol {
+  box-shadow: var(--glow-cyan-lg);
+  border-color: var(--platinum-light);
+}
+
+.hud-brand-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.hud-brand-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--platinum-light);
+}
+
+.hud-brand-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  color: var(--hologram-cyan);
+  text-transform: uppercase;
+}
+
+.hud-menu-items {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.hud-nav-item {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+  text-decoration: none;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hud-nav-item span.index {
+  color: var(--hologram-cyan);
+  opacity: 0.6;
+}
+
+.hud-nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: var(--hologram-cyan);
+  box-shadow: 0 0 8px var(--hologram-cyan);
+  transition: width 0.3s var(--ease-cinematic);
+}
+
+.hud-nav-item:hover, .hud-nav-item.active {
+  color: var(--platinum-light);
+}
+
+.hud-nav-item:hover::after, .hud-nav-item.active::after {
+  width: 100%;
+}
+
+.hud-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hud-audio-toggle {
+  background: transparent;
+  border: 1px solid var(--hairline-subtle);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.hud-audio-toggle:hover {
+  border-color: var(--hologram-cyan);
+  color: var(--titanium-silver);
+}
+
+.hud-audio-toggle.active {
+  border-color: var(--hologram-cyan);
+  color: var(--hologram-cyan);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.2);
+}
+
+.hud-audio-wave {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 10px;
+}
+
+.hud-audio-wave span {
+  width: 2px;
+  height: 4px;
+  background: currentColor;
+  border-radius: 1px;
+}
+
+.hud-audio-toggle.active .hud-audio-wave span {
+  animation: soundWave 1.2s infinite ease-in-out alternate;
+}
+
+.hud-audio-toggle.active .hud-audio-wave span:nth-child(2) { animation-delay: 0.2s; }
+.hud-audio-toggle.active .hud-audio-wave span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes soundWave {
+  0% { height: 3px; }
+  100% { height: 10px; }
+}
+
+.hud-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.12) 0%, rgba(139, 92, 246, 0.12) 100%);
+  border: 1px solid var(--hologram-cyan);
+  border-radius: var(--radius-pill);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--platinum-light);
+  text-decoration: none;
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.2);
+  transition: all 0.3s var(--ease-cinematic);
+}
+
+.hud-cta-link:hover {
+  background: var(--hologram-cyan);
+  color: #000;
+  box-shadow: var(--glow-cyan-lg);
+  transform: translateY(-1px);
+}
+
+.hud-mobile-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--hairline-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--platinum-light);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   MAIN VIEWPORT & IMMERSIVE SECTIONS
+   ========================================================================== */
+.universe-content-wrap {
+  position: relative;
+  z-index: 2;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ==========================================================================
+   1. HERO EXPERIENCE: THE MONUMENTAL DIGITAL UNIVERSE
+   ========================================================================== */
+.hero-universe-stage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+.hero-telemetry-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  color: var(--hologram-cyan);
+  text-transform: uppercase;
+  background: rgba(0, 240, 255, 0.06);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: var(--radius-pill);
+  padding: 6px 18px;
+  margin-bottom: 32px;
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.15);
+}
+
+.hero-telemetry-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--hologram-cyan);
+  box-shadow: 0 0 8px var(--hologram-cyan);
+  animation: pulseDot 1.6s infinite ease-in-out;
+}
+
+/* Monumental Typography */
+.hero-monumental-name {
+  font-family: 'Syne', 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  font-size: clamp(3.8rem, 11vw, 9.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--platinum-light);
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+}
+
+.hero-monumental-name span.name-first {
+  background: linear-gradient(180deg, #FFFFFF 0%, #D1D5DB 60%, #6B7280 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-monumental-name span.name-last {
+  background: linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 45%, var(--hologram-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 28px rgba(0, 240, 255, 0.35));
+}
+
+.hero-monumental-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(1.125rem, 2.4vw, 1.875rem);
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: var(--hologram-cyan);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-monumental-title::before,
+.hero-monumental-title::after {
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--hologram-cyan));
+}
+
+.hero-monumental-title::after {
+  background: linear-gradient(90deg, var(--hologram-cyan), transparent);
+}
+
+.hero-subtitle-quote {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: var(--text-muted);
+  max-width: 640px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+}
+
+.hero-interact-hint {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.25em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.hero-interact-hint:hover {
+  color: var(--hologram-cyan);
+}
+
+.scroll-indicator-arrow {
+  width: 24px;
+  height: 40px;
+  border: 1px solid var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.scroll-indicator-arrow::after {
+  content: '';
+  width: 4px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--hologram-cyan);
+  box-shadow: 0 0 8px var(--hologram-cyan);
+  animation: scrollBead 2.2s infinite ease-in-out;
+}
+
+@keyframes scrollBead {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(14px); opacity: 0.2; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* ==========================================================================
+   2. ABOUT SECTION: THE MIND BEHIND THE CODE & DIGITAL IDENTITY
+   ========================================================================== */
+.universe-section {
+  padding: 140px 0;
+  position: relative;
+}
+
+.section-eyebrow-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  color: var(--hologram-cyan);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.section-eyebrow-tag::before {
+  content: '//';
+  opacity: 0.6;
+}
+
+.section-monumental-heading {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--platinum-light);
+  margin-bottom: 24px;
+}
+
+.section-monumental-heading em {
+  font-style: normal;
+  color: var(--hologram-cyan);
+  text-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+}
+
+.about-grid-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.about-narrative-card {
+  background: var(--void-surface);
+  border: 1px solid var(--hairline-subtle);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: var(--shadow-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-narrative-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--hologram-cyan), transparent);
+}
+
+.about-narrative-p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--titanium-silver);
+  margin-bottom: 24px;
+}
+
+.about-narrative-p:last-of-type {
+  margin-bottom: 0;
+}
+
+.about-narrative-p strong {
+  color: var(--platinum-light);
+  font-weight: 600;
+}
+
+/* Holographic Digital Identity HUD */
+.hologram-profile-card {
+  background: linear-gradient(165deg, rgba(16, 20, 36, 0.75) 0%, rgba(8, 10, 18, 0.88) 100%);
+  border: 1px solid rgba(0, 240, 255, 0.28);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), var(--glow-cyan-sm);
+  position: relative;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Corner HUD Brackets */
+.hologram-corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--hologram-cyan);
+  pointer-events: none;
+}
+.corner-tl { top: 8px; left: 8px; border-top: 2px solid; border-left: 2px solid; }
+.corner-tr { top: 8px; right: 8px; border-top: 2px solid; border-right: 2px solid; }
+.corner-bl { bottom: 8px; left: 8px; border-bottom: 2px solid; border-left: 2px solid; }
+.corner-br { bottom: 8px; right: 8px; border-bottom: 2px solid; border-right: 2px solid; }
+
+.hologram-scan-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--hologram-cyan), transparent);
+  opacity: 0.6;
+  animation: scanMatrix 3.5s infinite linear;
+}
+
+@keyframes scanMatrix {
+  0% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.7; }
+  100% { transform: translateY(400px); opacity: 0; }
+}
+
+.hologram-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--hairline-subtle);
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.hologram-title-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.25em;
+  color: var(--hologram-cyan);
+  text-transform: uppercase;
+}
+
+.hologram-live-beacon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6875rem;
+  color: #10B981;
+}
+
+.hologram-live-beacon span.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 8px #10B981;
+  animation: pulseDot 1.5s infinite;
+}
+
+.hologram-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.hologram-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hologram-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.hologram-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--platinum-light);
+}
+
+.hologram-tags-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.hologram-spec-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  background: rgba(0, 240, 255, 0.07);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: var(--radius-xs);
+  color: var(--titanium-silver);
+}
+
+/* ==========================================================================
+   3. SKILLS: THE TECHNOLOGY CONSTELLATION (3D WEBGL + HOLOGRAPHIC INSPECTOR)
+   ========================================================================== */
+.constellation-wrapper {
+  position: relative;
+  margin-top: 40px;
+}
+
+.constellation-interactive-hud {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Quick Node Selector Pills */
+.constellation-pills-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.node-pill-btn {
+  background: rgba(14, 18, 30, 0.6);
+  border: 1px solid var(--hairline-subtle);
+  border-radius: var(--radius-pill);
+  padding: 8px 18px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  color: var(--titanium-silver);
+  cursor: pointer;
+  transition: all 0.3s var(--ease-cinematic);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.node-pill-btn span.pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  transition: background 0.3s;
+}
+
+.node-pill-btn:hover, .node-pill-btn.active {
+  background: rgba(0, 240, 255, 0.12);
+  border-color: var(--hologram-cyan);
+  color: var(--platinum-light);
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.node-pill-btn.active span.pill-dot {
+  background: var(--hologram-cyan);
+  box-shadow: 0 0 8px var(--hologram-cyan);
+}
+
+/* Constellation 3D Stage & Holographic Inspector Split */
+.constellation-stage-box {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.constellation-3d-viewport {
+  height: 480px;
+  background: radial-gradient(circle at 50% 50%, rgba(16, 24, 48, 0.4) 0%, rgba(3, 4, 8, 0.85) 100%);
+  border: 1px solid var(--hairline-bright);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-deep);
+}
+
+#constellation-sub-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.constellation-canvas-overlay {
+  position: absolute;
+  bottom: 16px;
+  left: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* Holographic Technology Inspector Panel */
+.hologram-inspector-panel {
+  background: var(--void-surface);
+  border: 1px solid var(--hairline-bright);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: var(--shadow-deep);
+  position: relative;
+  transition: border-color 0.4s ease;
+}
+
+.hologram-inspector-panel.highlight {
+  border-color: var(--hologram-cyan);
+  box-shadow: 0 0 35px rgba(0, 240, 255, 0.2);
+}
+
+.inspector-telemetry-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  color: var(--hologram-cyan);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.inspector-tech-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--platinum-light);
+  letter-spacing: 0.04em;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.inspector-tech-desc {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--titanium-silver);
+  margin-bottom: 28px;
+}
+
+.inspector-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  border-top: 1px solid var(--hairline-subtle);
+  padding-top: 20px;
+}
+
+.metric-item-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.625rem;
+  color: var(--text-muted);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.metric-item-val {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--hologram-cyan);
+}
+
+/* ==========================================================================
+   4. PHILOSOPHY: “CODE IS CREATIVE ENGINEERING.”
+   ========================================================================== */
+.philosophy-section {
+  padding: 160px 0;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.monumental-manifesto-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.manifesto-word {
+  font-family: 'Syne', sans-serif;
+  font-weight: 900;
+  font-size: clamp(3.2rem, 11vw, 8.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--platinum-light);
+  transition: transform 0.4s var(--ease-cinematic), color 0.4s ease;
+  user-select: none;
+}
+
+.manifesto-word:nth-child(1) { color: #FFFFFF; }
+.manifesto-word:nth-child(2) { color: var(--text-muted); }
+.manifesto-word:nth-child(3) {
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--hologram-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 35px rgba(0, 240, 255, 0.4));
+}
+.manifesto-word:nth-child(4) {
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--quantum-violet) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 35px rgba(139, 92, 246, 0.4));
+}
+
+.manifesto-word:hover {
+  transform: scale(1.03);
+}
+
+.philosophy-manifest-box {
+  max-width: 680px;
+  margin: 0 auto;
+  background: var(--void-surface);
+  border: 1px solid var(--hairline-bright);
+  border-radius: var(--radius-lg);
+  padding: 44px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-deep);
+  text-align: left;
+}
+
+.philosophy-lead {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--platinum-light);
+  margin-bottom: 24px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.philosophy-tenets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+}
+
+.philosophy-tenet-item {
+  font-size: 1.125rem;
+  color: var(--titanium-silver);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.philosophy-tenet-item::before {
+  content: '>';
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--hologram-cyan);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   5. WORKFLOW: “FROM IDEA TO REALITY” (3D FLOATING TIMELINE)
+   ========================================================================== */
+.workflow-section {
+  padding: 140px 0;
+}
+
+.workflow-timeline-track {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+  position: relative;
+}
+
+.workflow-card {
+  background: var(--void-surface);
+  border: 1px solid var(--hairline-subtle);
+  border-radius: var(--radius-md);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  position: relative;
+  transition: all 0.35s var(--ease-cinematic);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.workflow-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--hologram-cyan), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.workflow-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 240, 255, 0.4);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), var(--glow-cyan-sm);
+}
+
+.workflow-card:hover::before {
+  opacity: 1;
+}
+
+.workflow-step-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--hologram-cyan);
+  letter-spacing: 0.15em;
+  margin-bottom: 20px;
+}
+
+.workflow-step-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--platinum-light);
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.workflow-step-desc {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   6. EDUCATION: ACADEMIC SECTOR
+   ========================================================================== */
+.education-section {
+  padding: 130px 0;
+}
+
+.education-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.education-card {
+  background: var(--void-surface);
+  border: 1px solid var(--hairline-subtle);
+  border-radius: var(--radius-lg);
+  padding: 44px;
+  position: relative;
+  transition: all 0.35s var(--ease-cinematic);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.education-card:hover {
+  border-color: var(--hologram-cyan);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.75), var(--glow-cyan-sm);
+  transform: translateY(-4px);
+}
+
+.edu-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 18px;
+}
+
+.edu-status-tag.active {
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  color: var(--hologram-cyan);
+}
+
+.edu-status-tag.completed {
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: var(--quantum-violet);
+}
+
+.edu-degree-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.625rem;
+  font-weight: 700;
+  color: var(--platinum-light);
+  margin-bottom: 10px;
+}
+
+.edu-institution {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.125rem;
+  color: var(--hologram-cyan);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.edu-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   7. “BEYOND CODE”: THINK. BUILD. EVOLVE.
+   ========================================================================== */
+.beyond-code-section {
+  padding: 180px 0;
+  text-align: center;
+  position: relative;
+}
+
+.beyond-triptych {
+  font-family: 'Syne', sans-serif;
+  font-weight: 900;
+  font-size: clamp(3.5rem, 11.5vw, 9rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+}
+
+.beyond-triptych span {
+  display: block;
+}
+
+.beyond-triptych span:nth-child(1) {
+  color: #FFFFFF;
+}
+
+.beyond-triptych span:nth-child(2) {
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--quantum-violet) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 35px rgba(139, 92, 246, 0.35));
+}
+
+.beyond-triptych span:nth-child(3) {
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--hologram-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 45px rgba(0, 240, 255, 0.45));
+}
+
+.beyond-narrative-box {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: clamp(1.125rem, 1.8vw, 1.35rem);
+  color: var(--titanium-silver);
+  line-height: 1.85;
+}
+
+.beyond-narrative-box p {
+  margin-bottom: 24px;
+}
+
+.beyond-narrative-box p:last-child {
+  margin-bottom: 0;
+  color: var(--platinum-light);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   8. FINAL CONTACT EXPERIENCE: MONOLITHIC HORIZON
+   ========================================================================== */
+.final-contact-section {
+  padding: 160px 0 100px;
+  text-align: center;
+  position: relative;
+  background: radial-gradient(circle at 50% 60%, rgba(10, 15, 30, 0.7) 0%, #030306 80%);
+}
+
+.contact-monolith-visual {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.monolith-beacon-core {
+  width: 24px;
+  height: 24px;
+  background: var(--hologram-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 40px var(--hologram-cyan), 0 0 80px var(--hologram-cyan);
+  animation: pulseBeacon 2.5s infinite ease-in-out;
+}
+
+.monolith-ring {
+  position: absolute;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  border-radius: 50%;
+  animation: expandRing 4s infinite cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ring-1 { width: 60px; height: 60px; animation-delay: 0s; }
+.ring-2 { width: 100px; height: 100px; animation-delay: 1.2s; }
+.ring-3 { width: 140px; height: 140px; animation-delay: 2.4s; }
+
+@keyframes pulseBeacon {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.6; }
+}
+
+@keyframes expandRing {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.contact-call-header {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  letter-spacing: 0.3em;
+  color: var(--hologram-cyan);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.contact-monumental-call {
+  font-family: 'Syne', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.8rem, 8vw, 6.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--platinum-light);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.contact-monumental-call span.extraordinary {
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--hologram-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 35px rgba(0, 240, 255, 0.35));
+}
+
+.contact-sub-prompt {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 48px;
+  line-height: 1.6;
+}
+
+.btn-start-conversation {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 44px;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+  border: 1px solid var(--hologram-cyan);
+  border-radius: var(--radius-pill);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--platinum-light);
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+  transition: all 0.35s var(--ease-cinematic);
+}
+
+.btn-start-conversation:hover {
+  background: var(--hologram-cyan);
+  color: #000;
+  box-shadow: 0 0 60px rgba(0, 240, 255, 0.7);
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* ==========================================================================
+   TRANSMISSION TERMINAL MODAL (CONTACT FORM)
+   ========================================================================== */
+.transmission-modal-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(3, 4, 8, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.4s var(--ease-cinematic);
+}
+
+.transmission-modal-wrap.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.transmission-card {
+  width: 100%;
+  max-width: 620px;
+  background: linear-gradient(165deg, rgba(16, 20, 36, 0.95) 0%, rgba(6, 8, 14, 0.98) 100%);
+  border: 1px solid var(--hologram-cyan);
+  border-radius: var(--radius-lg);
+  padding: 44px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.9), var(--glow-cyan-lg);
+  position: relative;
+  text-align: left;
+  transform: scale(0.95);
+  transition: transform 0.4s var(--ease-cinematic);
+}
+
+.transmission-modal-wrap.open .transmission-card {
+  transform: scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: transparent;
+  border: 1px solid var(--hairline-subtle);
+  color: var(--text-muted);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  border-color: var(--hologram-cyan);
+  color: var(--hologram-cyan);
+}
+
+.transmission-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--platinum-light);
+  margin-bottom: 8px;
+}
+
+.transmission-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--hologram-cyan);
+  letter-spacing: 0.15em;
+  margin-bottom: 28px;
+}
+
+.form-field-group {
+  margin-bottom: 20px;
+}
+
+.form-field-label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.form-cyber-input, .form-cyber-textarea {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(10, 14, 26, 0.8);
+  border: 1px solid var(--hairline-bright);
+  border-radius: var(--radius-sm);
+  color: var(--platinum-light);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9375rem;
+  transition: all 0.3s ease;
+}
+
+.form-cyber-input:focus, .form-cyber-textarea:focus {
+  outline: none;
+  border-color: var(--hologram-cyan);
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.25);
+  background: rgba(14, 18, 36, 0.95);
+}
+
+.form-cyber-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-status-alert {
+  display: none;
+  padding: 12px 16px;
+  border-radius: var(--radius-xs);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  margin-bottom: 20px;
+}
+
+.form-status-alert.success {
+  display: block;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid #10B981;
+  color: #6EE7B7;
+}
+
+.form-status-alert.error {
+  display: block;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid #EF4444;
+  color: #FCA5A5;
+}
+
+.btn-transmit-submit {
+  width: 100%;
+  padding: 16px;
+  background: var(--hologram-cyan);
+  color: #000;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  box-shadow: var(--glow-cyan-sm);
+  transition: all 0.3s ease;
+}
+
+.btn-transmit-submit:hover {
+  box-shadow: var(--glow-cyan-lg);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   9. FINAL SIGNATURE & SYSTEM STATUS TELEMETRY
+   ========================================================================== */
+.universe-footer-sector {
+  border-top: 1px solid var(--hairline-subtle);
+  padding: 80px 0 50px;
+  background: #020204;
+}
+
+.footer-telemetry-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 60px;
+}
+
+.footer-monumental-sig {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--platinum-light);
+  margin-bottom: 6px;
+}
+
+.footer-sig-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  letter-spacing: 0.2em;
+  color: var(--hologram-cyan);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.footer-sig-tagline {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--titanium-silver);
+  letter-spacing: 0.05em;
+}
+
+.system-status-box {
+  background: rgba(12, 16, 28, 0.7);
+  border: 1px solid var(--hairline-subtle);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-label {
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+}
+
+.status-val {
+  color: var(--hologram-cyan);
+  font-weight: 600;
+}
+
+.status-val.pulse {
+  color: #10B981;
+}
+
+.footer-bottom-telemetry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--hairline-subtle);
+  padding-top: 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6875rem;
+  color: var(--text-dim);
+  letter-spacing: 0.12em;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .about-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .constellation-stage-box {
+    grid-template-columns: 1fr;
+  }
+
+  .constellation-3d-viewport {
+    height: 400px;
+  }
+
+  .workflow-timeline-track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .workflow-card:last-child {
+    grid-column: span 2;
+  }
+
+  .footer-telemetry-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 64px;
+  }
+
+  .hud-menu-items, .hud-cta-link {
+    display: none;
+  }
+
+  .hud-mobile-toggle {
+    display: flex;
+  }
+
+  .workflow-timeline-track {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-card:last-child {
+    grid-column: span 1;
+  }
+
+  .education-grid-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .about-narrative-card {
+    padding: 28px 20px;
+  }
+
+  .hologram-profile-card {
+    padding: 28px 20px;
+  }
+
+  .transmission-card {
+    padding: 32px 20px;
+  }
+}
+
+/* Mobile Nav Drawer */
+.futuristic-mobile-drawer {
+  position: fixed;
+  top: 96px;
+  left: 24px;
+  right: 24px;
+  background: rgba(6, 8, 14, 0.96);
+  border: 1px solid var(--hologram-cyan);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 99;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), var(--glow-cyan-sm);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  transform: translateY(-120%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s var(--ease-cinematic);
+}
+
+.futuristic-mobile-drawer.open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-hud-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9375rem;
+  letter-spacing: 0.16em;
+  color: var(--titanium-silver);
+  text-decoration: none;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--hairline-subtle);
+  display: flex;
+  justify-content: space-between;
+}
+
+.mobile-hud-link:last-child {
+  border-bottom: none;
+}
+
+.mobile-hud-link:hover {
+  color: var(--hologram-cyan);
+}

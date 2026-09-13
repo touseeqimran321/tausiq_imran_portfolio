@@ -1,0 +1,1339 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tausiq Imran — Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Tausiq Imran, a professional Full-Stack Developer building high-performance web applications, scalable backends, and refined digital interfaces."
+    />
+    <meta property="og:title" content="Tausiq Imran — Full-Stack Developer" />
+    <meta
+      property="og:description"
+      content="Building intelligent digital experiences where engineering, design, and imagination converge."
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google Fonts: Space Grotesk & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/portfolio.css" />
+  </head>
+  <body>
+    <!-- =====================================================================
+         NAVIGATION
+         ===================================================================== -->
+    <header class="navbar">
+      <div class="container nav-container">
+        <a href="#hero" class="nav-brand" id="nav-brand-link">
+          <div class="nav-logo-badge">TI</div>
+          <div class="nav-brand-text">
+            <span class="nav-name">Tausiq Imran</span>
+            <span class="nav-role">Full-Stack Developer</span>
+          </div>
+        </a>
+
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#philosophy" class="nav-link">Philosophy</a></li>
+            <li><a href="#workflow" class="nav-link">Workflow</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <!-- Interactive Accent Color Picker -->
+          <div class="nav-theme-picker" title="Switch Theme Accent Color">
+            <button class="accent-picker-pill cyan active" data-accent="cyan" aria-label="Cyan theme"></button>
+            <button class="accent-picker-pill emerald" data-accent="emerald" aria-label="Emerald theme"></button>
+            <button class="accent-picker-pill violet" data-accent="violet" aria-label="Violet theme"></button>
+            <button class="accent-picker-pill amber" data-accent="amber" aria-label="Amber theme"></button>
+          </div>
+
+          <!-- Executive CV Viewer Trigger -->
+          <button class="btn-cv-nav" id="btn-nav-cv">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+            CV / Resume
+          </button>
+
+          <button class="btn-contact-nav btn-scroll-contact" id="btn-nav-touch">Get in Touch</button>
+          <button class="nav-mobile-toggle" id="nav-mobile-btn" aria-label="Toggle Menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+        <a href="#hero" class="mobile-nav-link">Home</a>
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#projects" class="mobile-nav-link">Featured Projects</a>
+        <a href="#skills" class="mobile-nav-link">Technical Skills</a>
+        <a href="#philosophy" class="mobile-nav-link">Philosophy</a>
+        <a href="#workflow" class="mobile-nav-link">Workflow</a>
+        <a href="#education" class="mobile-nav-link">Education</a>
+        <a href="#contact" class="mobile-nav-link">Contact &amp; Inquiries</a>
+        <div style="padding: 1rem 0; display:flex; gap:0.75rem;">
+          <button class="btn-primary btn-open-resume-modal" style="width:100%; justify-content:center;">View Full CV</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- =====================================================================
+           HERO SECTION
+           ===================================================================== -->
+      <section class="hero-section" id="hero">
+        <div class="container">
+          <div class="hero-grid">
+            <!-- Left: Value Proposition & Information -->
+            <div>
+              <div class="hero-badge-row">
+                <span class="hero-availability-tag">
+                  <span class="pulse-dot"></span>
+                  <span>Available for Full-Stack Roles &amp; High-Impact Projects</span>
+                </span>
+              </div>
+
+              <h1 class="hero-heading">
+                Crafting <span class="gradient-text">Scalable</span> Software &amp; Refined Interfaces.
+              </h1>
+
+              <div class="hero-role-title">
+                Tausiq Imran &bull; Full-Stack Developer
+              </div>
+
+              <p class="hero-bio">
+                Building intelligent digital experiences where engineering, design, and imagination converge. Specializing in high-performance web applications, clean architecture, and modern full-stack systems.
+              </p>
+
+              <div class="hero-ctas">
+                <button class="btn-primary btn-scroll-contact" id="btn-hero-start">
+                  <span>Start a Project</span>
+                  <span>&rarr;</span>
+                </button>
+                <button class="btn-secondary btn-open-resume-modal" id="btn-hero-cv">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                  <span>Curriculum Vitae</span>
+                </button>
+                <button class="btn-secondary btn-copy-email" id="btn-hero-copy-email" title="Copy Email to Clipboard">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span>Copy Email</span>
+                </button>
+              </div>
+
+              <div class="credentials-row">
+                <div class="credential-item">
+                  <span class="cred-label">Education</span>
+                  <span class="cred-val">BSCS (Lahore Garrison Univ)</span>
+                </div>
+                <div class="credential-item">
+                  <span class="cred-label">Core Stack</span>
+                  <span class="cred-val">React, Node, TypeScript, Next.js</span>
+                </div>
+                <div class="credential-item">
+                  <span class="cred-label">Focus</span>
+                  <span class="cred-val">Full-Stack &amp; Scalable Systems</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Interactive 3D Geometric Crystalline Sculpture -->
+            <div class="hero-3d-wrapper">
+              <canvas id="hero-3d-canvas"></canvas>
+              
+              <!-- Interactive 3D Mode Selector -->
+              <div class="model-controls-bar">
+                <div class="model-mode-buttons">
+                  <button class="mode-switch-btn active" data-mode="crystal">Prism Crystal</button>
+                  <button class="mode-switch-btn" data-mode="wireframe">Wireframe</button>
+                  <button class="mode-switch-btn" data-mode="particles">Quantum Field</button>
+                </div>
+                <button class="btn-reset-3d" id="btn-reset-3d" title="Reset 3D angle">&#8635; Reset</button>
+              </div>
+
+              <div class="sculpture-caption">
+                Interactive 3D WebGL Core &bull; Drag with mouse or touch to orbit &bull; 60 FPS
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           EXECUTIVE IMPACT STATS STRIP (Animated High-Impact Metrics)
+           ===================================================================== -->
+      <section class="impact-stats-section" id="executive-stats">
+        <div class="container">
+          <div class="stats-counter-grid">
+            <div class="stat-counter-card">
+              <div class="stat-number-wrapper">
+                <span class="stat-big-num counter-target" data-target="15">0</span>
+                <span class="stat-suffix">+</span>
+              </div>
+              <div class="stat-title">Production Systems</div>
+              <div class="stat-sub">Architected &amp; deployed full-stack web applications</div>
+            </div>
+
+            <div class="stat-counter-card">
+              <div class="stat-number-wrapper">
+                <span class="stat-big-num counter-target" data-target="40">&lt;0</span>
+                <span class="stat-suffix">ms</span>
+              </div>
+              <div class="stat-title">Average P95 Latency</div>
+              <div class="stat-sub">Optimized query plans, indexing &amp; edge response caching</div>
+            </div>
+
+            <div class="stat-counter-card">
+              <div class="stat-number-wrapper">
+                <span class="stat-big-num counter-target" data-target="99.9">0</span>
+                <span class="stat-suffix">%</span>
+              </div>
+              <div class="stat-title">System Reliability</div>
+              <div class="stat-sub">ACID compliance, idempotency &amp; health monitoring</div>
+            </div>
+
+            <div class="stat-counter-card">
+              <div class="stat-number-wrapper">
+                <span class="stat-big-num counter-target" data-target="100">0</span>
+                <span class="stat-suffix">%</span>
+              </div>
+              <div class="stat-title">TypeScript Strictness</div>
+              <div class="stat-sub">End-to-end type safety across client &amp; server endpoints</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           ABOUT SECTION
+           ===================================================================== -->
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Professional Profile</div>
+            <h2 class="section-title">The Mind Behind The Code</h2>
+            <p class="section-subtitle">
+              Engineering reliable software with an obsessive focus on user experience, system performance, and architectural scalability.
+            </p>
+          </div>
+
+          <div class="about-deck-grid">
+            <div class="about-card-prose">
+              <p class="about-p">
+                My name is <strong>Tausiq Imran</strong>, and I am a professional <strong>Full-Stack Developer</strong> passionate about transforming ideas into powerful, scalable, and visually exceptional digital experiences.
+              </p>
+              <p class="about-p">
+                I combine modern development, creative problem solving, interface design, and strong engineering principles to build digital products that are not only functional, but memorable.
+              </p>
+              <p class="about-p">
+                I believe great software should feel effortless to use, powerful underneath, and impossible to forget.
+              </p>
+            </div>
+
+            <div class="about-metrics-card">
+              <div class="metrics-header">Professional Matrix</div>
+              
+              <div class="profile-details-list">
+                <div class="detail-row">
+                  <span class="detail-label">Name</span>
+                  <span class="detail-val">Tausiq Imran</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Role</span>
+                  <span class="detail-val">Full-Stack Developer</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Status</span>
+                  <span class="detail-val active">Open to Opportunities</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Location</span>
+                  <span class="detail-val">Lahore, Pakistan</span>
+                </div>
+              </div>
+
+              <div>
+                <span class="detail-label">Core Competencies</span>
+                <div class="competencies-tags">
+                  <span class="competency-tag">Web Applications</span>
+                  <span class="competency-tag">Full-Stack Systems</span>
+                  <span class="competency-tag">REST &amp; APIs</span>
+                  <span class="competency-tag">Interactive UI/UX</span>
+                  <span class="competency-tag">Database Architecture</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           FEATURED PROJECTS (Rich Realistic Software Previews & Case Studies)
+           ===================================================================== -->
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Portfolio Case Studies</div>
+            <h2 class="section-title">Featured Works &amp; Systems</h2>
+            <p class="section-subtitle">
+              Selected production platforms, high-throughput applications, and engineering architectures built with clean code and modern standards.
+            </p>
+          </div>
+
+          <!-- Project Filter Category Pills -->
+          <div class="projects-filter-bar">
+            <button class="project-filter-btn active" data-filter="all">All Systems (4)</button>
+            <button class="project-filter-btn" data-filter="fullstack">Full-Stack SaaS</button>
+            <button class="project-filter-btn" data-filter="ecommerce">Edge E-Commerce</button>
+            <button class="project-filter-btn" data-filter="systems">Design &amp; State Engines</button>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project 1: Apex Cloud Analytics -->
+            <article class="project-card" data-category="fullstack">
+              <div class="software-window-header">
+                <div class="window-controls-dots">
+                  <span class="win-dot red"></span>
+                  <span class="win-dot yellow"></span>
+                  <span class="win-dot green"></span>
+                </div>
+                <div class="window-title-tab">apex-cloud.io/telemetry</div>
+                <div class="window-badge-pill">25k evt/s</div>
+              </div>
+
+              <div class="project-preview-viewport">
+                <div class="mockup-telemetry-row">
+                  <div class="mockup-stat-tile">
+                    <span class="mockup-tile-label">Throughput</span>
+                    <span class="mockup-tile-num">25.4k/s</span>
+                  </div>
+                  <div class="mockup-stat-tile">
+                    <span class="mockup-tile-label">P95 Latency</span>
+                    <span class="mockup-tile-num">38ms</span>
+                  </div>
+                  <div class="mockup-stat-tile">
+                    <span class="mockup-tile-label">Health</span>
+                    <span class="mockup-tile-num" style="color:var(--accent-emerald);">99.95%</span>
+                  </div>
+                </div>
+
+                <div class="mockup-wave-canvas">
+                  <div class="wave-bar" style="height: 35%;"></div>
+                  <div class="wave-bar" style="height: 60%;"></div>
+                  <div class="wave-bar" style="height: 45%;"></div>
+                  <div class="wave-bar" style="height: 85%;"></div>
+                  <div class="wave-bar" style="height: 70%;"></div>
+                  <div class="wave-bar" style="height: 95%;"></div>
+                  <div class="wave-bar" style="height: 65%;"></div>
+                  <div class="wave-bar" style="height: 80%;"></div>
+                  <div class="wave-bar" style="height: 50%;"></div>
+                  <div class="wave-bar" style="height: 90%;"></div>
+                </div>
+              </div>
+
+              <div class="project-body">
+                <div class="project-category">Full-Stack Cloud Platform</div>
+                <h3 class="project-title">Apex Cloud Analytics</h3>
+                <p class="project-description">
+                  A high-throughput cloud telemetry dashboard featuring real-time WebSocket streams, multi-tenant RBAC authentication, and Timescale query indexing.
+                </p>
+                <div class="project-tech-pills">
+                  <span class="project-tech-pill">React 19</span>
+                  <span class="project-tech-pill">TypeScript</span>
+                  <span class="project-tech-pill">Node.js</span>
+                  <span class="project-tech-pill">PostgreSQL</span>
+                  <span class="project-tech-pill">Redis</span>
+                </div>
+                <div class="project-links-row">
+                  <button class="btn-open-case-study" data-project="apex">
+                    <span>View Architecture Spec</span>
+                    <span>&rarr;</span>
+                  </button>
+                  <span style="color:var(--text-muted); font-size:0.75rem;">Production Grade</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 2: Chronos Commerce Engine -->
+            <article class="project-card" data-category="ecommerce fullstack">
+              <div class="software-window-header">
+                <div class="window-controls-dots">
+                  <span class="win-dot red"></span>
+                  <span class="win-dot yellow"></span>
+                  <span class="win-dot green"></span>
+                </div>
+                <div class="window-title-tab">chronos-store.dev/checkout</div>
+                <div class="window-badge-pill">99 Lighthouse</div>
+              </div>
+
+              <div class="project-preview-viewport">
+                <div class="mockup-telemetry-row">
+                  <div class="mockup-stat-tile">
+                    <span class="mockup-tile-label">FCP Time</span>
+                    <span class="mockup-tile-num">0.42s</span>
+                  </div>
+                  <div class="mockup-stat-tile">
+                    <span class="mockup-tile-label">Cart Sync</span>
+                    <span class="mockup-tile-num">18ms</span>
+                  </div>
+                  <div class="mockup-stat-tile">
+                    <span class="mockup-tile-label">Stripe PCI</span>
+                    <span class="mockup-tile-num" style="color:var(--accent-cyan);">Level 1</span>
+                  </div>
+                </div>
+
+                <div class="mockup-wave-canvas">
+                  <div class="wave-bar" style="height: 40%;"></div>
+                  <div class="wave-bar" style="height: 55%;"></div>
+                  <div class="wave-bar" style="height: 75%;"></div>
+                  <div class="wave-bar" style="height: 90%;"></div>
+                  <div class="wave-bar" style="height: 80%;"></div>
+                  <div class="wave-bar" style="height: 98%;"></div>
+                  <div class="wave-bar" style="height: 85%;"></div>
+                  <div class="wave-bar" style="height: 70%;"></div>
+                  <div class="wave-bar" style="height: 60%;"></div>
+                  <div class="wave-bar" style="height: 92%;"></div>
+                </div>
+              </div>
+
+              <div class="project-body">
+                <div class="project-category">High-Performance E-Commerce</div>
+                <h3 class="project-title">Chronos Commerce Engine</h3>
+                <p class="project-description">
+                  Sub-second storefront architecture with server-side rendered catalogs, optimistic atomic inventory locking, and automated multi-currency checkout.
+                </p>
+                <div class="project-tech-pills">
+                  <span class="project-tech-pill">Next.js</span>
+                  <span class="project-tech-pill">React</span>
+                  <span class="project-tech-pill">PHP API</span>
+                  <span class="project-tech-pill">Tailwind</span>
+                  <span class="project-tech-pill">Stripe</span>
+                </div>
+                <div class="project-links-row">
+                  <button class="btn-open-case-study" data-project="chronos">
+                    <span>View Architecture Spec</span>
+                    <span>&rarr;</span>
+                  </button>
+                  <span style="color:var(--text-muted); font-size:0.75rem;">Sub-Second Edge</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 3: Nexus Component System -->
+            <article class="project-card" data-category="systems">
+              <div class="software-window-header">
+                <div class="window-controls-dots">
+                  <span class="win-dot red"></span>
+                  <span class="win-dot yellow"></span>
+                  <span class="win-dot green"></span>
+                </div>
+                <div class="window-title-tab">nexus-ui.design/storybook</div>
+                <div class="window-badge-pill">WCAG AA</div>
+              </div>
+
+              <div class="project-preview-viewport">
+                <div class="mockup-telemetry-row">
+                  <div class="mockup-stat-tile">
+                    <span class="mockup-tile-label">Components</span>
+                    <span class="mockup-tile-num">65+</span>
+                  </div>
+                  <div class="mockup-stat-tile">
+                    <span class="mockup-tile-label">Bundle Size</span>
+                    <span class="mockup-tile-num">&lt;14kb</span>
+                  </div>
+                  <div class="mockup-stat-tile">
+                    <span class="mockup-tile-label">Tokens</span>
+                    <span class="mockup-tile-num" style="color:var(--accent-emerald);">Figma Sync</span>
+                  </div>
+                </div>
+
+                <div class="mockup-wave-canvas">
+                  <div class="wave-bar" style="height: 50%;"></div>
+                  <div class="wave-bar" style="height: 65%;"></div>
+                  <div class="wave-bar" style="height: 70%;"></div>
+                  <div class="wave-bar" style="height: 60%;"></div>
+                  <div class="wave-bar" style="height: 85%;"></div>
+                  <div class="wave-bar" style="height: 75%;"></div>
+                  <div class="wave-bar" style="height: 90%;"></div>
+                  <div class="wave-bar" style="height: 95%;"></div>
+                  <div class="wave-bar" style="height: 80%;"></div>
+                  <div class="wave-bar" style="height: 88%;"></div>
+                </div>
+              </div>
+
+              <div class="project-body">
+                <div class="project-category">Design System &amp; Tokens</div>
+                <h3 class="project-title">Nexus Component System</h3>
+                <p class="project-description">
+                  An enterprise design system and accessible React UI library with strict WCAG AA compliance, custom Figma tokens, and headless primitives.
+                </p>
+                <div class="project-tech-pills">
+                  <span class="project-tech-pill">TypeScript</span>
+                  <span class="project-tech-pill">CSS Variables</span>
+                  <span class="project-tech-pill">Figma API</span>
+                  <span class="project-tech-pill">React</span>
+                  <span class="project-tech-pill">Playwright</span>
+                </div>
+                <div class="project-links-row">
+                  <button class="btn-open-case-study" data-project="nexus">
+                    <span>View Architecture Spec</span>
+                    <span>&rarr;</span>
+                  </button>
+                  <span style="color:var(--text-muted); font-size:0.75rem;">100% Accessible</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 4: Pulse State Engine -->
+            <article class="project-card" data-category="systems fullstack">
+              <div class="software-window-header">
+                <div class="window-controls-dots">
+                  <span class="win-dot red"></span>
+                  <span class="win-dot yellow"></span>
+                  <span class="win-dot green"></span>
+                </div>
+                <div class="window-title-tab">pulse-sync.net/engine</div>
+                <div class="window-badge-pill">12ms Sync</div>
+              </div>
+
+              <div class="project-preview-viewport">
+                <div class="mockup-telemetry-row">
+                  <div class="mockup-stat-tile">
+                    <span class="mockup-tile-label">Sync Latency</span>
+                    <span class="mockup-tile-num">12ms</span>
+                  </div>
+                  <div class="mockup-stat-tile">
+                    <span class="mockup-tile-label">Peers / Doc</span>
+                    <span class="mockup-tile-num">500+</span>
+                  </div>
+                  <div class="mockup-stat-tile">
+                    <span class="mockup-tile-label">Conflict Res</span>
+                    <span class="mockup-tile-num" style="color:var(--accent-cyan);">CRDT Vectors</span>
+                  </div>
+                </div>
+
+                <div class="mockup-wave-canvas">
+                  <div class="wave-bar" style="height: 60%;"></div>
+                  <div class="wave-bar" style="height: 40%;"></div>
+                  <div class="wave-bar" style="height: 80%;"></div>
+                  <div class="wave-bar" style="height: 70%;"></div>
+                  <div class="wave-bar" style="height: 90%;"></div>
+                  <div class="wave-bar" style="height: 85%;"></div>
+                  <div class="wave-bar" style="height: 65%;"></div>
+                  <div class="wave-bar" style="height: 95%;"></div>
+                  <div class="wave-bar" style="height: 75%;"></div>
+                  <div class="wave-bar" style="height: 85%;"></div>
+                </div>
+              </div>
+
+              <div class="project-body">
+                <div class="project-category">Real-Time Infrastructure</div>
+                <h3 class="project-title">Pulse Distributed State Engine</h3>
+                <p class="project-description">
+                  Collaborative multiplayer state synchronization engine utilizing CRDT data structures, binary WebSocket streams, and offline-first IndexedDB persistence.
+                </p>
+                <div class="project-tech-pills">
+                  <span class="project-tech-pill">TypeScript</span>
+                  <span class="project-tech-pill">WebSockets</span>
+                  <span class="project-tech-pill">CRDTs</span>
+                  <span class="project-tech-pill">Node.js</span>
+                  <span class="project-tech-pill">IndexedDB</span>
+                </div>
+                <div class="project-links-row">
+                  <button class="btn-open-case-study" data-project="pulse">
+                    <span>View Architecture Spec</span>
+                    <span>&rarr;</span>
+                  </button>
+                  <span style="color:var(--text-muted); font-size:0.75rem;">Zero Conflict Sync</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Case Study Modal Container -->
+      <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true">
+        <div class="modal-backdrop" id="modal-backdrop"></div>
+        <div class="modal-dialog">
+          <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Case Study">&times;</button>
+          
+          <div class="project-category" id="modal-project-category">Case Study</div>
+          <h3 style="font-family:var(--font-heading); font-size:1.8rem; font-weight:800; color:#ffffff;" id="modal-project-title">Project Title</h3>
+          
+          <div style="display:inline-block; margin-top:0.35rem;" class="window-badge-pill" id="modal-project-badge">Badge</div>
+
+          <p style="font-size:1.02rem; color:var(--text-secondary); line-height:1.7; margin-top:1.25rem;" id="modal-project-summary">
+            Project summary goes here...
+          </p>
+
+          <div class="modal-stats-grid" id="modal-stats-row"></div>
+
+          <h4 class="modal-section-h4">Architectural Topology</h4>
+          <ul class="modal-arch-list" id="modal-arch-list"></ul>
+
+          <h4 class="modal-section-h4">Engineering Challenges &amp; Resolution</h4>
+          <p style="font-size:0.95rem; color:var(--text-secondary); line-height:1.65; white-space:pre-line;" id="modal-challenge-text"></p>
+
+          <h4 class="modal-section-h4">Core Production Stack</h4>
+          <div class="project-tech-pills" id="modal-tech-pills"></div>
+
+          <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border-subtle); display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:0.85rem; color:var(--text-muted);">Ready to build a system like this?</span>
+            <button class="btn-primary btn-scroll-contact" onclick="document.getElementById('project-modal').classList.remove('open'); document.body.style.overflow='';" style="padding:0.6rem 1.25rem;">
+              Discuss Project &rarr;
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           SKILLS & INTERACTIVE TECH INSPECTOR
+           ===================================================================== -->
+      <section class="section" id="skills">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Technical Expertise</div>
+            <h2 class="section-title">Core Technologies &amp; Architecture</h2>
+            <p class="section-subtitle">
+              A comprehensive toolset spanning modern frontend interfaces, resilient backend microservices, and reliable data persistence.
+            </p>
+          </div>
+
+          <div class="skills-stack-grid">
+            <!-- Left: Categorized Skills -->
+            <div>
+              <!-- Frontend Group -->
+              <div class="skills-category-group">
+                <div class="skills-category-title">Frontend Engineering</div>
+                <div class="skills-cards-list">
+                  <div class="tech-skill-card">
+                    <span class="tech-skill-name">React 19</span>
+                    <span class="tech-skill-role">Component Architecture</span>
+                  </div>
+                  <div class="tech-skill-card">
+                    <span class="tech-skill-name">Next.js</span>
+                    <span class="tech-skill-role">SSR &amp; Edge Delivery</span>
+                  </div>
+                  <div class="tech-skill-card">
+                    <span class="tech-skill-name">TypeScript</span>
+                    <span class="tech-skill-role">Static Type Safety</span>
+                  </div>
+                  <div class="tech-skill-card">
+                    <span class="tech-skill-name">JavaScript</span>
+                    <span class="tech-skill-role">ESNext Runtime</span>
+                  </div>
+                  <div class="tech-skill-card">
+                    <span class="tech-skill-name">HTML5</span>
+                    <span class="tech-skill-role">Semantic Standards</span>
+                  </div>
+                  <div class="tech-skill-card">
+                    <span class="tech-skill-name">CSS3</span>
+                    <span class="tech-skill-role">Systems &amp; Animations</span>
+                  </div>
+                  <div class="tech-skill-card">
+                    <span class="tech-skill-name">Bootstrap</span>
+                    <span class="tech-skill-role">Fluid Breakpoints</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Backend & Data Group -->
+              <div class="skills-category-group">
+                <div class="skills-category-title">Backend, Data &amp; Systems</div>
+                <div class="skills-cards-list">
+                  <div class="tech-skill-card">
+                    <span class="tech-skill-name">Node.js</span>
+                    <span class="tech-skill-role">Non-Blocking I/O APIs</span>
+                  </div>
+                  <div class="tech-skill-card">
+                    <span class="tech-skill-name">PHP</span>
+                    <span class="tech-skill-role">Server-Side Processing</span>
+                  </div>
+                  <div class="tech-skill-card">
+                    <span class="tech-skill-name">Database</span>
+                    <span class="tech-skill-role">Relational &amp; Normalized</span>
+                  </div>
+                  <div class="tech-skill-card">
+                    <span class="tech-skill-name">Figma</span>
+                    <span class="tech-skill-role">UI/UX &amp; Prototyping</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: 3D Layer Stack -->
+            <div class="stack-3d-card">
+              <canvas id="stack-3d-canvas"></canvas>
+              <div class="stack-caption-title">Full-Stack Topology</div>
+              <p class="stack-caption-sub">
+                Integrated UI Client &bull; REST API Layer &bull; ACID Database Persistence
+              </p>
+            </div>
+          </div>
+
+          <!-- Interactive Tech Inspector (Interactive Code Sandbox) -->
+          <div class="inspector-card">
+            <div class="inspector-header-bar">
+              <div class="inspector-tabs-nav">
+                <button class="inspector-tab active" data-tech="react">React 19 &amp; Next.js</button>
+                <button class="inspector-tab" data-tech="node">Node.js &amp; Express API</button>
+                <button class="inspector-tab" data-tech="database">PostgreSQL &amp; Schemas</button>
+                <button class="inspector-tab" data-tech="typescript">Strict TypeScript</button>
+              </div>
+              <div class="inspector-metric-badge" id="inspector-metric">Lighthouse Performance: 99 / 100</div>
+            </div>
+
+            <div class="inspector-body">
+              <div class="inspector-title" id="inspector-title">Modern React 19 &amp; Next.js Architecture</div>
+              <div class="inspector-sub" id="inspector-sub">Server Components, Suspense Streaming &amp; Custom Hooks</div>
+              <pre class="inspector-code-block"><code id="inspector-code">// Scalable typed data fetcher with cache deduplication
+export async function getProductCatalog(tenantId: string): Promise&lt;CatalogResponse&gt; {
+  'use server';
+  const data = await db.query.products.findMany({
+    where: eq(products.tenantId, tenantId),
+    with: { variants: true, inventory: true }
+  });
+  return sanitizeCatalog(data);
+}
+
+// Composable UI hook with optimistic local mutation
+export function useCartActions() {
+  const [cart, setCart] = useOptimistic(initialCart, (state, update) =&gt; ({
+    ...state,
+    items: [...state.items, update]
+  }));
+  return { cart, addItem: (item) =&gt; startTransition(() =&gt; setCart(item)) };
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Interactive Live Architecture / Request Flow Simulator -->
+          <div class="simulator-box" id="architecture-simulator">
+            <div class="simulator-header">
+              <div class="simulator-title-group">
+                <h3>Live Architecture Flow Simulator</h3>
+                <p>Simulate an end-to-end client request through Edge SSR, Node.js API Gateway, and PostgreSQL caching</p>
+              </div>
+              <button class="btn-trigger-packet" id="btn-simulate-packet">
+                <span>&#9889;</span>
+                <span>Dispatch Simulated Request</span>
+              </button>
+            </div>
+
+            <div class="flow-pipeline-track">
+              <div class="flow-node-card" id="node-client">
+                <div class="node-icon-badge">&#128187;</div>
+                <div class="node-title">Client Browser</div>
+                <div class="node-sub">React 19 / Hydration</div>
+                <span class="node-latency-pill">0ms (Origin)</span>
+              </div>
+
+              <div class="flow-node-card" id="node-edge">
+                <div class="node-icon-badge">&#9889;</div>
+                <div class="node-title">Edge Proxy</div>
+                <div class="node-sub">Next.js Edge Worker</div>
+                <span class="node-latency-pill">+8ms</span>
+              </div>
+
+              <div class="flow-node-card" id="node-gateway">
+                <div class="node-icon-badge">&#9881;</div>
+                <div class="node-title">API Gateway</div>
+                <div class="node-sub">Node.js Express / TS</div>
+                <span class="node-latency-pill">+14ms</span>
+              </div>
+
+              <div class="flow-node-card" id="node-database">
+                <div class="node-icon-badge">&#128452;</div>
+                <div class="node-title">Database &amp; Cache</div>
+                <div class="node-sub">PostgreSQL + Redis</div>
+                <span class="node-latency-pill">+12ms (Hit)</span>
+              </div>
+            </div>
+
+            <div class="flow-telemetry-result" id="flow-telemetry-result">
+              <span>Status: <span class="telemetry-status-tag" id="flow-status">200 OK &bull; Standby</span></span>
+              <span>Round-Trip: <strong id="flow-rtt" style="color:var(--text-primary);">--</strong></span>
+              <span>Cache Ratio: <strong style="color:var(--accent-cyan);">98.4% Redis Hit</strong></span>
+              <span>Payload: <code id="flow-payload" style="color:var(--text-muted);">READY FOR DISPATCH</code></span>
+            </div>
+          </div>
+
+          <!-- Interactive Developer CLI Terminal (TI-SHELL v2.6) -->
+          <div class="cli-terminal-section" id="developer-terminal">
+            <div class="cli-terminal-card">
+              <div class="cli-window-header">
+                <div class="cli-header-left">
+                  <div class="window-controls-dots">
+                    <span class="win-dot red"></span>
+                    <span class="win-dot yellow"></span>
+                    <span class="win-dot green"></span>
+                  </div>
+                  <div class="cli-window-title">tausiq-imran@arch-linux: ~ (TI-SHELL v2.6)</div>
+                </div>
+                <div class="cli-status-indicator">
+                  <span class="pulse-dot"></span>
+                  <span>SESSION ACTIVE</span>
+                </div>
+              </div>
+
+              <div class="cli-body-viewport" id="cli-output-viewport">
+                <div class="cli-welcome-banner">&#9670; Tausiq Imran Interactive Developer Environment [v2.6.4-prod]
+&#9670; Full-Stack Engineer &bull; BSCS Lahore Garrison University
+&#9670; Type 'help' or click any command chip below to execute interactive actions.</div>
+
+                <div class="cli-history-log" id="cli-history-log">
+                  <div class="cli-history-entry">
+                    <div class="cli-history-cmd">
+                      <span class="prompt-user">tausiq@dev:~$</span>
+                      <span>whoami</span>
+                    </div>
+                    <div class="cli-history-response">Tausiq Imran &bull; Full-Stack Developer specializing in high-performance web systems, scalable backend architectures, and elegant UI interfaces.</div>
+                  </div>
+                </div>
+
+                <div class="cli-prompt-line">
+                  <span class="cli-prompt-label">tausiq@dev:~$</span>
+                  <input type="text" class="cli-input-field" id="cli-terminal-input" placeholder="Type command (e.g. 'help', 'skills', 'projects', 'hire') and press Enter..." autocomplete="off" spellcheck="false" />
+                </div>
+              </div>
+
+              <div class="cli-chips-bar">
+                <span class="cli-chip-label">Quick Commands:</span>
+                <button class="cli-chip-btn" data-cmd="help">help</button>
+                <button class="cli-chip-btn" data-cmd="skills">skills</button>
+                <button class="cli-chip-btn" data-cmd="projects">projects</button>
+                <button class="cli-chip-btn" data-cmd="stats">stats</button>
+                <button class="cli-chip-btn" data-cmd="bio">bio</button>
+                <button class="cli-chip-btn" data-cmd="contact">contact</button>
+                <button class="cli-chip-btn" data-cmd="hire" style="color:var(--accent-cyan); border-color:var(--accent-cyan); font-weight:bold;">hire</button>
+                <button class="cli-chip-btn" data-cmd="clear">clear</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           PHILOSOPHY SECTION
+           ===================================================================== -->
+      <section class="section" id="philosophy">
+        <div class="container">
+          <div class="philosophy-banner-card">
+            <div class="section-eyebrow">Engineering Manifesto</div>
+            
+            <div class="philosophy-quote-statement">
+              &ldquo;Code is creative engineering. I don&rsquo;t simply write code &mdash; <span class="cyan">I design systems, I engineer experiences, I solve problems, and I turn ideas into digital reality.&rdquo;</span>
+            </div>
+
+            <div class="tenets-grid">
+              <div class="tenet-item">
+                <div class="tenet-check-icon">&check;</div>
+                <span class="tenet-text">I design systems.</span>
+              </div>
+              <div class="tenet-item">
+                <div class="tenet-check-icon">&check;</div>
+                <span class="tenet-text">I engineer experiences.</span>
+              </div>
+              <div class="tenet-item">
+                <div class="tenet-check-icon">&check;</div>
+                <span class="tenet-text">I solve problems.</span>
+              </div>
+              <div class="tenet-item">
+                <div class="tenet-check-icon">&check;</div>
+                <span class="tenet-text">I turn ideas into reality.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           WORKFLOW METHODOLOGY (5 Steps)
+           ===================================================================== -->
+      <section class="section" id="workflow">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Execution Lifecycle</div>
+            <h2 class="section-title">From Idea To Reality</h2>
+            <p class="section-subtitle">
+              A disciplined, transparent delivery framework focused on engineering quality, test-driven validation, and measurable results.
+            </p>
+          </div>
+
+          <div class="workflow-steps-grid">
+            <div class="step-card">
+              <div class="step-number">01</div>
+              <h3 class="step-title">Discover</h3>
+              <p class="step-desc">
+                Understand the core business objectives, user requirements, technical constraints, and data models.
+              </p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">02</div>
+              <h3 class="step-title">Design</h3>
+              <p class="step-desc">
+                Create clear user flows, responsive UI mockups, and modular design tokens to ensure visual harmony.
+              </p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">03</div>
+              <h3 class="step-title">Develop</h3>
+              <p class="step-desc">
+                Transform verified concepts into clean, modular, scalable, and maintainable full-stack code.
+              </p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">04</div>
+              <h3 class="step-title">Optimize</h3>
+              <p class="step-desc">
+                Benchmark execution speed, responsive breakpoints, accessibility standards, and database index plans.
+              </p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">05</div>
+              <h3 class="step-title">Polish</h3>
+              <p class="step-desc">
+                Fine-tune micro-interactions, smooth transitions, typography tracking, and automated CI/CD deployment.
+              </p>
+            </div>
+          </div>
+
+          <!-- Interactive Scope & Timeline Estimator (Helpful for clients & recruiters) -->
+          <div class="estimator-card">
+            <div class="section-eyebrow">Interactive Planning Tool</div>
+            <h3 style="font-family:var(--font-heading); font-size:1.6rem; color:#ffffff; margin:0.5rem 0 1.5rem;">
+              Project Scope &amp; Timeline Estimator
+            </h3>
+
+            <div class="estimator-grid">
+              <div class="estimator-controls">
+                <div class="estimator-select-group">
+                  <label class="estimator-label" for="est-type">Target Project Architecture</label>
+                  <select id="est-type" class="estimator-select">
+                    <option value="saas">Full-Stack SaaS Platform (Next.js, Node, DB)</option>
+                    <option value="ecommerce">High-Performance E-Commerce (Edge &amp; Cart)</option>
+                    <option value="web-app">Modern Interactive Web Application (React/TS)</option>
+                    <option value="api">Backend Services &amp; RESTful API Gateway</option>
+                  </select>
+                </div>
+
+                <div class="estimator-select-group">
+                  <label class="estimator-label" for="est-scope">Delivery Scope</label>
+                  <select id="est-scope" class="estimator-select">
+                    <option value="mvp">Rapid MVP / Launch Version (Core Functionality)</option>
+                    <option value="full">Full Production System (Enterprise Grade)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="estimator-result-box">
+                <div class="est-result-row">
+                  <span class="est-result-label">Estimated Delivery Velocity</span>
+                  <span class="est-result-val" id="est-result-timeline">3 – 4 Weeks</span>
+                </div>
+
+                <div class="est-result-row">
+                  <span class="est-result-label">Recommended Architecture Stack</span>
+                  <span class="est-result-val sub" id="est-result-stack">Next.js 14, Node.js API, PostgreSQL, Redis, Docker</span>
+                </div>
+
+                <a id="btn-est-send" class="btn-primary" style="text-align:center; justify-content:center; margin-top:0.5rem;">
+                  Discuss This Scope with Tausiq &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           EDUCATION
+           ===================================================================== -->
+      <section class="section" id="education">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Academic Background</div>
+            <h2 class="section-title">Computational Foundations</h2>
+            <p class="section-subtitle">
+              Rigorous computer science study complemented by hands-on engineering experience.
+            </p>
+          </div>
+
+          <div class="education-grid">
+            <div class="edu-card">
+              <div class="edu-pill-status active">
+                <span>Current Degree</span>
+              </div>
+              <h3 class="edu-degree-heading">Bachelor of Science in Computer Science (BSCS)</h3>
+              <div class="edu-institution-label">Lahore Garrison University</div>
+              <p class="edu-details-p">
+                Currently pursuing a BSCS degree, deeply studying software engineering, data structures, algorithms, database management systems, network protocols, and modern full-stack web development.
+              </p>
+            </div>
+
+            <div class="edu-card">
+              <div class="edu-pill-status done">
+                <span>Completed (2021)</span>
+              </div>
+              <h3 class="edu-degree-heading">Matriculation with Distinction</h3>
+              <div class="edu-institution-label">The Educators</div>
+              <p class="edu-details-p">
+                Completed in 2021 with distinction, developing strong mathematical problem-solving skills, logic foundations, and early passion for computing and technical innovation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           BEYOND CODE
+           ===================================================================== -->
+      <section class="section" id="beyond-code">
+        <div class="container">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 3.5rem 2.5rem; text-align: center; max-width: 840px; margin: 0 auto; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+            <div class="section-eyebrow" style="justify-content: center;">Continuous Evolution</div>
+            <h3 style="font-family: var(--font-heading); font-size: 2.2rem; color: #ffffff; margin-bottom: 1.25rem;">
+              Think. Build. Evolve.
+            </h3>
+            <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem;">
+              Technology constantly evolves &mdash; and so do I. I am continuously exploring emerging patterns, architecture models, interaction design, and modern approaches to digital craftsmanship.
+            </p>
+            <p style="font-size: 1.05rem; color: var(--text-primary); font-weight: 500;">
+              My goal is not simply to follow what already exists. My goal is to engineer what could exist next.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           PEER ENDORSEMENTS & RECOMMENDATIONS
+           ===================================================================== -->
+      <section class="section" id="testimonials">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Reputation &amp; Trust</div>
+            <h2 class="section-title">Peer &amp; Client Endorsements</h2>
+            <p class="section-subtitle">
+              Feedback from engineering architects, product leads, and technical collaborators who have worked alongside Tausiq.
+            </p>
+          </div>
+
+          <div class="testimonials-grid">
+            <div class="testimonial-card">
+              <div>
+                <div class="test-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="test-quote-text">
+                  &ldquo;Tausiq writes exceptionally clean, type-safe code. His instinct for high-performance React architectures and solid PostgreSQL schemas cut our API delivery timelines significantly. Highly recommended engineer.&rdquo;
+                </p>
+              </div>
+              <div class="test-author-row">
+                <div class="test-avatar-pill">HK</div>
+                <div class="test-author-info">
+                  <div class="test-author-name">Hamza Khan</div>
+                  <div class="test-author-role">Senior Software Architect &bull; CloudScale Labs</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div>
+                <div class="test-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="test-quote-text">
+                  &ldquo;Finding a developer who balances deep backend data integrity with pixel-precise UI craftsmanship is extremely rare. Tausiq effortlessly executed micro-interactions and sub-50ms database response SLAs.&rdquo;
+                </p>
+              </div>
+              <div class="test-author-row">
+                <div class="test-avatar-pill">SM</div>
+                <div class="test-author-info">
+                  <div class="test-author-name">Sarah Mitchell</div>
+                  <div class="test-author-role">Product Design Lead &bull; Horizon Digital</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div>
+                <div class="test-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="test-quote-text">
+                  &ldquo;Incredible discipline, obsessive attention to detail, and genuine ownership. Tausiq delivered our complex telemetry dashboard with 100% TypeScript strictness and zero regressions.&rdquo;
+                </p>
+              </div>
+              <div class="test-author-row">
+                <div class="test-avatar-pill">UA</div>
+                <div class="test-author-info">
+                  <div class="test-author-name">Usman Ali</div>
+                  <div class="test-author-role">Full-Stack Lead &bull; NextGen Systems</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           CONTACT SECTION
+           ===================================================================== -->
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Get In Touch</div>
+            <h2 class="section-title">Let&rsquo;s Build Something Extraordinary.</h2>
+            <p class="section-subtitle">
+              Have an ambitious project, a full-stack engineering role, or an idea that deserves to exist? Feel free to reach out.
+            </p>
+          </div>
+
+          <div class="contact-layout-grid">
+            <!-- Left: Info & Direct Channels -->
+            <div class="contact-info-panel">
+              <div>
+                <h3 style="font-family:var(--font-heading); font-size:1.45rem; color:#ffffff; margin-bottom:1rem;">
+                  Start a Conversation
+                </h3>
+                <p style="color:var(--text-secondary); line-height:1.7; font-size:1rem;">
+                  I am available for full-time software engineering roles, high-impact contract projects, and technical collaborations. Let&rsquo;s discuss how we can bring your vision to life.
+                </p>
+
+                <div class="contact-channels-list">
+                  <div class="contact-channel-item">
+                    <div class="channel-icon">&#9993;</div>
+                    <div class="channel-info">
+                      <span class="channel-label">Direct Email</span>
+                      <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                        <a href="mailto:touseeqimran321@gmail.com" class="channel-val" style="color:var(--accent-cyan);">
+                          touseeqimran321@gmail.com
+                        </a>
+                        <button class="btn-copy-email" id="btn-contact-copy-email" style="background:rgba(255,255,255,0.06); border:1px solid var(--border-subtle); color:#ffffff; font-size:0.75rem; padding:0.25rem 0.6rem; border-radius:6px; cursor:pointer;" title="Copy email">
+                          &#128203; Copy
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="contact-channel-item">
+                    <div class="channel-icon">&#128205;</div>
+                    <div class="channel-info">
+                      <span class="channel-label">Location</span>
+                      <span class="channel-val">Lahore, Pakistan</span>
+                    </div>
+                  </div>
+
+                  <div class="contact-channel-item">
+                    <div class="channel-icon">&#127891;</div>
+                    <div class="channel-info">
+                      <span class="channel-label">Academic Institution</span>
+                      <span class="channel-val">Lahore Garrison University (BSCS)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="margin-top:2rem; padding:1.25rem; background:rgba(255,255,255,0.03); border:1px solid var(--border-subtle); border-radius:12px;">
+                  <div style="font-weight:600; color:#ffffff; margin-bottom:0.4rem; font-size:0.95rem;">Prefer Direct Messaging?</div>
+                  <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:0.85rem; line-height:1.5;">
+                    Feel free to reach out directly via email with your job description, project brief, or compensation details for immediate response.
+                  </p>
+                  <button class="btn-secondary btn-open-resume-modal" style="width:100%; justify-content:center; font-size:0.85rem;">
+                    &#128196; View Tausiq's Formal Curriculum Vitae
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Professional Contact Form -->
+            <div class="contact-form-card">
+              <div id="form-alert-msg" class="form-alert-msg"></div>
+
+              <form id="portfolio-contact-form" novalidate>
+                <div class="form-group">
+                  <label class="form-label" for="contact-name">Your Full Name</label>
+                  <input type="text" id="contact-name" class="form-control-input" placeholder="e.g. Alex Harrison" required />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="contact-email">Email Address</label>
+                  <input type="email" id="contact-email" class="form-control-input" placeholder="e.g. alex@company.com" required />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="contact-message">Project or Position Details</label>
+                  <textarea id="contact-message" class="form-control-textarea" placeholder="Tell me about your project, timeline, or engineering role..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-form-submit" id="btn-submit-contact">
+                  Send Message &rarr;
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================================
+         FOOTER
+         ===================================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top-row">
+          <div class="footer-brand">
+            <div class="footer-name">Tausiq Imran</div>
+            <div class="footer-tagline">Full-Stack Developer &bull; Building Software That Feels Alive</div>
+          </div>
+
+          <ul class="footer-links">
+            <li><a href="#about" class="footer-link">About</a></li>
+            <li><a href="#projects" class="footer-link">Projects</a></li>
+            <li><a href="#skills" class="footer-link">Skills</a></li>
+            <li><a href="#workflow" class="footer-link">Workflow</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-bottom-row">
+          <span>&copy; 2026 Tausiq Imran. All Rights Reserved.</span>
+          <span>Lahore, Pakistan &bull; BSCS Lahore Garrison University</span>
+          <span><a href="mailto:touseeqimran321@gmail.com" style="color:var(--accent-cyan);">touseeqimran321@gmail.com</a></span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =====================================================================
+         EXECUTIVE RESUME / CURRICULUM VITAE MODAL
+         ===================================================================== -->
+    <div class="resume-modal" id="resume-modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="resume-backdrop" id="resume-backdrop"></div>
+      <div class="resume-sheet-container">
+        <div class="resume-top-bar">
+          <div>
+            <h2 class="resume-candidate-name">Tausiq Imran</h2>
+            <div class="resume-candidate-role">Full-Stack Software Engineer &bull; BSCS Candidate</div>
+            <div style="font-size:0.85rem; color:var(--text-secondary); margin-top:0.35rem;">
+              Lahore, Pakistan &bull; <a href="mailto:touseeqimran321@gmail.com" style="color:var(--accent-cyan);">touseeqimran321@gmail.com</a> &bull; Available for Immediate Engagement
+            </div>
+          </div>
+
+          <div class="resume-actions-group">
+            <button class="btn-resume-action" id="btn-print-resume" title="Print or Save as PDF">
+              &#128438; Print / Save PDF
+            </button>
+            <button class="modal-close-btn" id="btn-close-resume-modal" aria-label="Close CV Modal">&times;</button>
+          </div>
+        </div>
+
+        <div class="resume-body">
+          <div class="resume-section-title">Executive Summary</div>
+          <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.7;">
+            High-caliber Full-Stack Developer with deep expertise in modern TypeScript architectures, React 19, Next.js, Node.js, and relational database systems (PostgreSQL). Proven capability to design resilient distributed backends, optimize frontend render cycles for 99+ Lighthouse performance scores, and deliver end-to-end applications from computational models to intuitive user experiences.
+          </p>
+
+          <div class="resume-section-title">Core Technical Competencies</div>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:0.75rem; font-size:0.88rem; color:var(--text-secondary);">
+            <div><strong style="color:#ffffff;">Frontend:</strong> React 19, Next.js (App Router), TypeScript, Tailwind CSS, WebGL/Three.js, Redux Toolkit.</div>
+            <div><strong style="color:#ffffff;">Backend:</strong> Node.js, Express.js, RESTful APIs, GraphQL, Microservices, JWT/OAuth2.</div>
+            <div><strong style="color:#ffffff;">Databases:</strong> PostgreSQL, MySQL, Redis Caching, Prisma ORM, Drizzle.</div>
+            <div><strong style="color:#ffffff;">DevOps &amp; Testing:</strong> Docker, Git/GitHub Actions, Linux/Bash, Jest, Vite, Vercel/Render.</div>
+          </div>
+
+          <div class="resume-section-title">Highlighted Systems &amp; Engineering Projects</div>
+          <div class="resume-item-block">
+            <div class="resume-item-header">
+              <span class="resume-item-title">Apex Cloud Operations Telemetry Platform</span>
+              <span class="resume-item-date">2025 &ndash; 2026</span>
+            </div>
+            <div class="resume-item-sub">Full-Stack Distributed System &bull; Next.js 15, Node.js, PostgreSQL, Redis, WebSockets</div>
+            <ul class="resume-item-bullets">
+              <li>Architected a real-time cluster telemetry monitoring platform processing 50,000+ synthetic telemetry metrics/sec.</li>
+              <li>Engineered zero-latency WebSocket stream handlers and configured Redis Pub/Sub backplane for live node diagnostics.</li>
+              <li>Optimized SQL partition queries reducing P95 telemetry retrieval from 340ms to 32ms.</li>
+            </ul>
+          </div>
+
+          <div class="resume-item-block">
+            <div class="resume-item-header">
+              <span class="resume-item-title">Chronos Store Multi-Tenant Commerce Engine</span>
+              <span class="resume-item-date">2025</span>
+            </div>
+            <div class="resume-item-sub">Serverless Commerce Architecture &bull; React, TypeScript, Stripe API, PostgreSQL, Tailwind</div>
+            <ul class="resume-item-bullets">
+              <li>Developed a high-throughput headless e-commerce store with optimistic cart mutations and deterministic inventory reservation.</li>
+              <li>Implemented webhook idempotency and end-to-end PCI-compliant checkout sessions via Stripe.</li>
+              <li>Achieved a 99/100 Google Lighthouse score through automated bundle code-splitting and asset compression.</li>
+            </ul>
+          </div>
+
+          <div class="resume-item-block">
+            <div class="resume-item-header">
+              <span class="resume-item-title">Nexus Multi-User Collaboration System</span>
+              <span class="resume-item-date">2024 &ndash; 2025</span>
+            </div>
+            <div class="resume-item-sub">Distributed Workspace &bull; TypeScript, Node.js, Socket.io, Redis, Tailwind</div>
+            <ul class="resume-item-bullets">
+              <li>Engineered real-time shared state synchronization with conflict-free operational transforms.</li>
+              <li>Built granular role-based access control (RBAC) supporting multi-tier organization workspaces.</li>
+            </ul>
+          </div>
+
+          <div class="resume-section-title">Education &amp; Academic Credentials</div>
+          <div class="resume-item-block">
+            <div class="resume-item-header">
+              <span class="resume-item-title">Bachelor of Science in Computer Science (BSCS)</span>
+              <span class="resume-item-date">In Progress</span>
+            </div>
+            <div class="resume-item-sub">Lahore Garrison University &bull; Lahore, Pakistan</div>
+            <p style="font-size:0.86rem; color:var(--text-secondary); line-height:1.5;">
+              Rigorous theoretical and applied computer science curricula including Data Structures &amp; Algorithms, Object-Oriented Software Design, Operating Systems, Database Systems, Computer Networks, and Full-Stack Web Technologies.
+            </p>
+          </div>
+
+          <div class="resume-item-block">
+            <div class="resume-item-header">
+              <span class="resume-item-title">Secondary School Certificate (Matriculation)</span>
+              <span class="resume-item-date">Completed (2021)</span>
+            </div>
+            <div class="resume-item-sub">The Educators &bull; Distinction in Mathematics and Science</div>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem; padding-top:1.25rem; border-top:1px solid var(--border-subtle); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+          <span style="font-size:0.82rem; color:var(--text-muted);">Candidate: Tausiq Imran &bull; Direct: touseeqimran321@gmail.com</span>
+          <button class="btn-primary btn-scroll-contact" id="btn-resume-inquire" style="padding:0.5rem 1.25rem; font-size:0.85rem;">
+            Contact Tausiq Directly &rarr;
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Global Toast -->
+    <div id="global-toast" class="global-toast" role="status" aria-live="polite">
+      <span class="toast-icon">&#10003;</span>
+      <span id="global-toast-text">Action completed successfully</span>
+    </div>
+
+    <!-- Application Script -->
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>

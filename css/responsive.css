@@ -1,0 +1,165 @@
+/* ==========================================================================
+   Areesha Amjad — Premium Graphic Designer Portfolio
+   Responsive Architecture: Mobile-First and Adaptive Breakpoints
+   ========================================================================== */
+
+/* Large Tablets & Small Laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-visual-stage {
+    height: 460px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .about-portrait-wrapper {
+    position: static;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .contact-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 70px;
+  }
+
+  .nav-menu, .btn-nav-contact {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-card {
+    padding: 32px 24px;
+    min-height: auto;
+  }
+
+  .contact-form-card {
+    padding: 28px 20px;
+  }
+
+  .contact-meta-card {
+    padding: 28px 20px;
+  }
+
+  .footer-top-grid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
+
+/* Mobile Screens (max-width: 540px) */
+@media (max-width: 540px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+  }
+
+  .hero-visual-stage {
+    height: 400px;
+  }
+
+  .art-card-primary {
+    padding: 16px;
+    height: 340px;
+  }
+
+  .vector-circle {
+    width: 90px;
+    height: 90px;
+    left: 20px;
+    top: 40px;
+  }
+
+  .vector-arch {
+    width: 70px;
+    height: 100px;
+    right: 20px;
+  }
+
+  .badge-palette {
+    bottom: -10px;
+    left: 0;
+    padding: 8px 12px;
+  }
+
+  .swatch-dot {
+    width: 14px;
+    height: 14px;
+  }
+
+  .badge-tools {
+    top: 0;
+    right: -10px;
+    padding: 8px 12px;
+  }
+
+  .timeline-card {
+    padding: 18px 16px;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="tiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+    <linearGradient id="tiStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.4" />
+    </linearGradient>
+  </defs>
+  <!-- Rounded squircle background -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#090a0f" stroke="url(#tiStroke)" stroke-width="2" />
+  <!-- Monogram T & I -->
+  <path d="M 18 20 L 38 20 M 28 20 L 28 44" stroke="url(#tiGrad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <path d="M 44 24 L 44 44" stroke="#f8fafc" stroke-width="4.5" stroke-linecap="round" fill="none" />
+  <circle cx="44" cy="18" r="2.5" fill="#38bdf8" />
+</svg>
